@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.sql.*;
 public class sql_test_actually_its_easier_than_I_thought {
-    String getSQL(String str1, int columnIndex) {
+    String getSQL(String username,String sql_column_name) {
         String query = "select * from login_table where username=?";
 
         try {
@@ -11,14 +11,14 @@ public class sql_test_actually_its_easier_than_I_thought {
             ResultSet rs = null;
             ps = con.prepareStatement(query);
 
-            ps.setString(1, str1);
+            ps.setString(1, username);
 
             rs = ps.executeQuery();
             if (rs.next()) {
                 JOptionPane.showMessageDialog(null, "Login successfully");
                 System.out.println(rs.next());
 
-                return rs.getString(columnIndex);
+                return rs.getString(sql_column_name);
             } else {
                 JOptionPane.showMessageDialog(null, "Erorr");
             }
