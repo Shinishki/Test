@@ -1,6 +1,6 @@
 import javax.swing.*;
 import java.sql.*;
-public class sql_test_actually_its_easier_than_I_thought {
+public class SQL_Methods{
     String getSQL(String username,String sql_column_name) {
         String query = "select * from login_table where username=?";
 
